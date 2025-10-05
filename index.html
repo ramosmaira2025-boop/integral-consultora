@@ -1,153 +1,170 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integral Consultora RRHH</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #f7f9fc;
-            color: #002244;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #002B5B;
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-        header h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-        }
-        header p {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-        nav {
-            background-color: #004080;
-            text-align: center;
-            padding: 12px 0;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-        nav a:hover {
-            background-color: #0066cc;
-        }
-        section {
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: auto;
-            text-align: center;
-        }
-        .hero {
-            background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            color: white;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-            padding: 120px 20px;
-        }
-        .hero h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        .hero p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #004080;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background-color: #0066cc;
-        }
-        .services {
-            background: linear-gradient(to bottom, #ffffff, #eaf2fb);
-        }
-        .services h3 {
-            color: #002B5B;
-            font-size: 1.8em;
-        }
-        footer {
-            background-color: #002B5B;
-            color: white;
-            text-align: center;
-            padding: 25px 10px;
-            font-size: 0.9em;
-        }
-        img {
-            border-radius: 8px;
-            width: 100%;
-            max-width: 800px;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Integral Consultora RRHH</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background-color: #f7f9fc;
+      color: #002244;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #002b5b;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 2.4em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    nav {
+      background-color: #004080;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #0066cc;
+    }
+
+    .hero {
+      background: url("https://images.unsplash.com/photo-1598257006626-48b0c252070d?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #004080;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0066cc;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    section h3 {
+      color: #002b5b;
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.1em;
+    }
+
+    img {
+      border-radius: 8px;
+      width: 100%;
+      max-width: 900px;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background-color: #002b5b;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>INTEGRAL CONSULTORA RRHH</h1>
+    <p>Gestión de talento a tu medida</p>
+  </header>
 
-    <header>
-        <h1>INTEGRAL CONSULTORA RRHH</h1>
-        <p>Gestión de talento a tu medida</p>
-    </header>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#trabaja">Trabajá con Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#trabaja">Trabajá con Nosotros</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+  <section class="hero" id="inicio">
+    <h2>Tu aliado estratégico en Recursos Humanos</h2>
+    <p>Impulsamos el crecimiento de tu empresa con soluciones adaptadas a PyMEs y emprendimientos.</p>
+    <a href="#contacto" class="btn">Contáctanos</a>
+  </section>
 
-    <section class="hero" id="inicio">
-        <h2>Tu aliado estratégico en Recursos Humanos</h2>
-        <p>Impulsamos el crecimiento de tu empresa con soluciones adaptadas a PyMEs y emprendimientos.</p>
-        <a href="#contacto" class="btn">Contáctanos</a>
-    </section>
+  <section id="nosotros">
+    <h3>Quiénes Somos</h3>
+    <p>Ofrecemos soluciones de RRHH diseñadas para construir equipos sólidos, comprometidos y alineados con los valores de tu organización.</p>
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Equipo de trabajo en oficina moderna">
+  </section>
 
-    <section id="nosotros">
-        <h3>Quiénes Somos</h3>
-        <p>Ofrecemos soluciones de RRHH diseñadas para construir equipos sólidos, comprometidos y alineados con los valores de tu organización. Nos enfocamos en negocios del sector servicios y tecnología.</p>
-        <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=80" alt="Equipo en oficina profesional">
-    </section>
+  <section id="servicios">
+    <h3>Servicios</h3>
+    <p>Brindamos servicios de selección de personal, evaluación de desempeño, análisis de puestos, capacitación y desarrollo organizacional.</p>
+    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" alt="Reunión profesional en oficina">
+  </section>
 
-    <section id="servicios" class="services">
-        <h3>Servicios</h3>
-        <p>Selección por competencias, análisis de puestos, evaluación de desempeño, capacitación y desarrollo. Diseñamos estrategias a medida según las necesidades de tu PyME.</p>
-        <img src="https://images.unsplash.com/photo-1587614382346-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Reunión de trabajo profesional">
-    </section>
+  <section id="trabaja">
+    <h3>Trabajá con Nosotros</h3>
+    <p>Buscamos Analista Jr. de Selección. Si sos proactivo, organizado y te apasiona la gestión del talento, ¡sumate a nuestro equipo!</p>
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Consultores trabajando en equipo">
+  </section>
 
-    <section id="trabaja">
-        <h3>Trabajá con Nosotros</h3>
-        <p>Buscamos Analista Jr. de Selección. Si sos proactivo, organizado y te apasiona la gestión del talento, ¡te invitamos a formar parte de nuestro equipo!</p>
-        <img src="https://images.unsplash.com/photo-1581093588401-22e8c5f2f3e1?auto=format&fit=crop&w=1200&q=80" alt="Reclutadores en reunión">
-    </section>
+  <section id="contacto">
+    <h3>Contacto</h3>
+    <p>¿Listo para potenciar tu equipo? Escribinos y agendá una consulta sin compromiso.</p>
+    <p><strong>Email:</strong> consultoraintegral@gmail.com<br>
+      <strong>Teléfono:</strong> 343-5174-59000</p>
+    <a href="mailto:consultoraintegral@gmail.com" class="btn">Enviar Correo</a>
+  </section>
 
-    <section id="contacto">
-        <h3>Contacto</h3>
-        <p>¿Listo para potenciar tu equipo? Escribinos y agendá una consulta sin compromiso.</p>
-        <p><strong>Email:</strong> consultoraintegral@gmail.com<br>
-        <strong>Teléfono:</strong> 343-5174-59000</p>
-        <a href="mailto:consultoraintegral@gmail.com" class="btn">Enviar Correo</a>
-    </section>
-
-    <footer>
-        &copy; 2025 Integral Consultora RRHH - Todos los derechos reservados
-    </footer>
-
+  <footer>
+    &copy; 2025 Integral Consultora RRHH - Todos los derechos reservados
+  </footer>
 </body>
 </html>
