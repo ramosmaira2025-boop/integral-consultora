@@ -1,230 +1,239 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Integral Consultora RRHH</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTEGRAL CONSULTORA RRHH</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      font-family: "Segoe UI", sans-serif;
+    * {
       margin: 0;
-      background-color: #f7f9fc;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
       color: #002244;
+      background-color: #f7f9fc;
       line-height: 1.6;
-      scroll-behavior: smooth;
     }
 
     header {
-      background-color: #002b5b;
+      background: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
       color: white;
       text-align: center;
-      padding: 60px 20px;
-      animation: fadeIn 1.5s ease;
+      padding: 120px 20px;
+      animation: fadeIn 2s ease;
     }
 
     header h1 {
-      font-size: 2.4em;
-      margin-bottom: 10px;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: bold;
     }
 
     header p {
-      font-size: 1.2em;
-      opacity: 0.9;
+      font-size: 1.3em;
+      margin-top: 10px;
     }
 
     nav {
-      background-color: #004080;
-      text-align: center;
-      padding: 12px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background-color: #0044a0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      padding: 8px 16px;
-      border-radius: 20px;
-      transition: 0.3s;
+      margin: 8px 12px;
+      padding: 8px 18px;
+      border-radius: 25px;
+      background: #0079cb;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #0066cc;
-    }
-
-    .hero {
-      background-color: #002b5b;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-    }
-
-    .hero h2 {
-      font-size: 2em;
-      margin-bottom: 10px;
-      animation: fadeInUp 1.2s ease;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 25px;
-      animation: fadeInUp 1.8s ease;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: #004080;
-      color: white;
-      padding: 10px 25px;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: 0.3s;
-      animation: fadeInUp 2.4s ease;
-    }
-
-    .btn:hover {
-      background-color: #0066cc;
+      background-color: white;
+      color: #0044a0;
+      transform: scale(1.05);
     }
 
     section {
       padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
       text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1s ease;
+      background-color: white;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 1000px;
+      margin: 40px auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: slideUp 1.5s ease;
     }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    section h3 {
-      color: #002b5b;
-      font-size: 1.8em;
+    h2 {
+      font-size: 2em;
+      text-transform: uppercase;
+      color: #0044a0;
       margin-bottom: 20px;
     }
 
-    section p {
-      font-size: 1.1em;
+    h3 {
+      color: #0079cb;
       margin-bottom: 10px;
     }
 
-    img {
-      border-radius: 8px;
-      width: 100%;
-      max-width: 900px;
-      margin-top: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    .icon {
+      font-size: 2em;
+      color: #0079cb;
+      margin-bottom: 15px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: #f2f5fa;
+      padding: 25px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    .service:hover {
+      background: #0079cb;
+      color: white;
+      transform: scale(1.05);
     }
 
     footer {
-      background-color: #002b5b;
+      background-color: #0044a0;
       color: white;
       text-align: center;
-      padding: 25px 10px;
+      padding: 20px;
       font-size: 0.9em;
-    }
-
-    @keyframes fadeInUp {
-      0% {opacity: 0; transform: translateY(20px);}
-      100% {opacity: 1; transform: translateY(0);}
     }
 
     @keyframes fadeIn {
       from {opacity: 0;}
       to {opacity: 1;}
     }
+
+    @keyframes slideUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>INTEGRAL CONSULTORA RRHH</h1>
-    <p>Gestión de talento a tu medida</p>
+    <p>GESTIÓN DE TALENTO A TU MEDIDA</p>
   </header>
 
   <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#ventaja">Ventaja</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#trabaja">Únete</a>
+    <a href="#quienes">Nosotros</a>
+    <a href="#ventajas">Ventajas</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#trabaja">Trabajá con Nosotros</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <section class="hero" id="inicio">
-    <h2>Gestión de talento a tu medida</h2>
+  <section id="inicio">
+    <h2>TU ALIADO ESTRATÉGICO EN RRHH</h2>
     <p>Somos tu aliado estratégico para PyMEs y pequeños emprendimientos. Ofrecemos soluciones de gestión de talento que promueven el crecimiento a través de equipos sólidos y comprometidos.</p>
-    <a href="#contacto" class="btn">Contáctanos</a>
   </section>
 
-  <section id="nosotros">
-    <h3>Quiénes Somos</h3>
-    <p><strong>Misión y Foco:</strong> Ofrecemos soluciones de Recursos Humanos a PyMEs para construir equipos sólidos. Nos enfocamos en negocios del sector Servicios y Tecnología que buscan formalizar su gestión de personas para escalar de forma sostenible.</p>
-    <p><strong>Valores Clave:</strong> Trato Humano y Ética | Foco en PyMEs</p>
-    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Equipo en oficina profesional">
+  <section id="quienes">
+    <h2>NUESTRA IDENTIDAD</h2>
+    <h3>MISIÓN Y FOCO</h3>
+    <p>Ofrecer soluciones de Recursos Humanos a PyMEs para construir equipos sólidos, enfocados en negocios del sector Servicios y Tecnología que buscan formalizar su gestión de personas.</p>
+    <h3>VALORES CLAVE</h3>
+    <p>Trato Humano y Ética | Foco en PyMEs.</p>
   </section>
 
-  <section id="ventaja">
-    <h3>Nuestra Ventaja Competitiva</h3>
-    <p><strong>Enfoque a Medida:</strong> Creamos estrategias que responden a las necesidades específicas, escala y presupuesto de las PyMEs, adaptadas a su cultura organizacional.</p>
-    <p><strong>Gestión por Competencias:</strong> Utilizamos metodologías innovadoras, como la técnica STAR, que garantizan incorporar talento de alto desempeño y una planificación de carrera sostenible.</p>
-    <p><strong>Trato Humano y Ética:</strong> Nuestra empatía asegura soluciones que priorizan el bienestar de las personas y la sustentabilidad.</p>
-    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" alt="Reunión profesional en oficina">
+  <section id="ventajas">
+    <h2>NUESTRA VENTAJA COMPETITIVA</h2>
+    <div class="services-grid">
+      <div class="service">
+        <i class="fa-solid fa-user-tie icon"></i>
+        <h3>ENFOQUE A MEDIDA</h3>
+        <p>Diseñamos estrategias que se adaptan a las necesidades, escala y cultura organizacional de cada PyME.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-chart-line icon"></i>
+        <h3>GESTIÓN POR COMPETENCIAS</h3>
+        <p>Aplicamos metodologías como la técnica STAR para asegurar desempeño superior y desarrollo sostenible.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-handshake icon"></i>
+        <h3>TRATO HUMANO Y ÉTICA</h3>
+        <p>Nuestro valor principal es la empatía, priorizando el bienestar de las personas y la sustentabilidad.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="servicios">
-    <h3>Portafolio de Soluciones</h3>
-    <p><strong>Selección de Personal por Competencias:</strong> Garantizamos la incorporación de personas con habilidades técnicas y valores alineados a la empresa.</p>
-    <p><strong>Análisis y Descripción de Puestos:</strong> Elaboramos perfiles detallados que definen responsabilidades, tareas clave y requerimientos.</p>
-    <p><strong>Diseño de Estructuras Organizativas:</strong> Optimizamos flujos de trabajo, roles y especialización.</p>
-    <p><strong>Evaluación de Desempeño y Clima:</strong> Diagnosticamos el clima laboral e implementamos planes de mejora.</p>
-    <p><strong>Planes de Capacitación y Desarrollo:</strong> Diseñamos programas de formación continua para potenciar las competencias del equipo.</p>
-    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Capacitación y trabajo en equipo">
+  <section id="portafolio">
+    <h2>PORTAFOLIO DE SOLUCIONES</h2>
+    <div class="services-grid">
+      <div class="service">
+        <i class="fa-solid fa-briefcase icon"></i>
+        <h3>SELECCIÓN POR COMPETENCIAS</h3>
+        <p>Buscamos el ajuste ideal entre talento y cultura empresarial mediante entrevistas basadas en competencias.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-list-check icon"></i>
+        <h3>ANÁLISIS Y DESCRIPCIÓN DE PUESTOS</h3>
+        <p>Definimos objetivos, responsabilidades y el perfil ideal de cada puesto clave dentro de la empresa.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-diagram-project icon"></i>
+        <h3>DISEÑO ORGANIZATIVO</h3>
+        <p>Optimizamos estructuras y roles para maximizar eficiencia y fomentar la especialización del talento.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-people-group icon"></i>
+        <h3>EVALUACIÓN DE CLIMA Y DESEMPEÑO</h3>
+        <p>Realizamos diagnósticos de clima laboral y acciones de mejora para potenciar la productividad.</p>
+      </div>
+      <div class="service">
+        <i class="fa-solid fa-graduation-cap icon"></i>
+        <h3>CAPACITACIÓN Y DESARROLLO</h3>
+        <p>Diseñamos planes de formación continua para impulsar el crecimiento profesional dentro de tu equipo.</p>
+      </div>
+    </div>
   </section>
 
   <section id="trabaja">
-    <h3>Únete al Equipo</h3>
+    <h2>TRABAJÁ CON NOSOTROS</h2>
     <p><strong>Vacante Destacada:</strong> Analista Jr. de Selección</p>
-    <p>Buscamos talento con iniciativa y orientación a la calidad para incorporarse a nuestra área de Selección de Personal.</p>
-    <p><strong>Modalidad:</strong> Trabajo mixto (presencial y teletrabajo) de lunes a viernes, jornada full-time.</p>
-    <p><strong>Formación:</strong> Programas de capacitación continua en metodologías de selección y gestión de RRHH.</p>
-    <p><strong>Crecimiento:</strong> Posibilidad de ascenso a Analista Sr. de Selección.</p>
-    <p><em>Ambiente colaborativo y dinámico, enfocado en la mejora continua y el aprendizaje en equipo.</em></p>
-    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Consultores trabajando en equipo">
+    <p>Buscamos personas con iniciativa y orientación a la calidad para sumarse a nuestro equipo de RRHH.</p>
+    <ul style="list-style:none; margin-top:15px;">
+      <li>📍 Modalidad Mixta: Presencial + Home Office</li>
+      <li>🎓 Formación y desarrollo continuo</li>
+      <li>🚀 Posibilidades de crecimiento profesional</li>
+    </ul>
   </section>
 
   <section id="contacto">
-    <h3>Contacto</h3>
-    <p><strong>¿Listo para potenciar tu equipo?</strong><br>
-    Agenda una consulta sin compromiso. Conversemos sobre las necesidades específicas de tu PyME o emprendimiento.</p>
-    <p><strong>Email:</strong> consultoraintegral@gmail.com<br>
-      <strong>Teléfono:</strong> 343-5174-59000</p>
-    <a href="mailto:consultoraintegral@gmail.com" class="btn">Enviar Correo</a>
+    <h2>CONTACTO</h2>
+    <p>¿Listo para potenciar tu equipo? Agenda una consulta sin compromiso.</p>
+    <p><strong>Email:</strong> consultoraintegral@gmail.com</p>
+    <p><strong>Teléfono:</strong> 343-5174-59000</p>
   </section>
 
   <footer>
-    &copy; 2025 Integral Consultora RRHH - Todos los derechos reservados
+    &copy; 2025 Integral Consultora RRHH | Todos los derechos reservados
   </footer>
 
-  <script>
-    // Efecto de aparición al hacer scroll
-    const sections = document.querySelectorAll("section");
-    const showOnScroll = () => {
-      const trigger = window.innerHeight * 0.85;
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < trigger) sec.classList.add("visible");
-      });
-    };
-    window.addEventListener("scroll", showOnScroll);
-    showOnScroll();
-  </script>
 </body>
 </html>
