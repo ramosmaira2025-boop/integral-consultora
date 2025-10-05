@@ -11,6 +11,7 @@
       background-color: #f7f9fc;
       color: #002244;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
@@ -18,6 +19,7 @@
       color: white;
       text-align: center;
       padding: 60px 20px;
+      animation: fadeIn 1.5s ease;
     }
 
     header h1 {
@@ -34,6 +36,9 @@
       background-color: #004080;
       text-align: center;
       padding: 12px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
 
     nav a {
@@ -85,17 +90,19 @@
       background-color: #0066cc;
     }
 
-    @keyframes fadeInUp {
-      0% {opacity: 0; transform: translateY(20px);}
-      100% {opacity: 1; transform: translateY(0);}
-    }
-
     section {
       padding: 60px 20px;
       max-width: 1000px;
       margin: auto;
       text-align: center;
-      animation: fadeInUp 1.2s ease;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     section h3 {
@@ -106,6 +113,7 @@
 
     section p {
       font-size: 1.1em;
+      margin-bottom: 10px;
     }
 
     img {
@@ -123,6 +131,16 @@
       padding: 25px 10px;
       font-size: 0.9em;
     }
+
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
   </style>
 </head>
 <body>
@@ -134,38 +152,58 @@
   <nav>
     <a href="#inicio">Inicio</a>
     <a href="#nosotros">Nosotros</a>
+    <a href="#ventaja">Ventaja</a>
     <a href="#servicios">Servicios</a>
-    <a href="#trabaja">Trabajá con Nosotros</a>
+    <a href="#trabaja">Únete</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
   <section class="hero" id="inicio">
-    <h2>Brindamos soluciones integrales para tu empresa</h2>
-    <p>Gestión estratégica del talento humano adaptada a las necesidades de cada PyME y emprendimiento.</p>
+    <h2>Gestión de talento a tu medida</h2>
+    <p>Somos tu aliado estratégico para PyMEs y pequeños emprendimientos. Ofrecemos soluciones de gestión de talento que promueven el crecimiento a través de equipos sólidos y comprometidos.</p>
     <a href="#contacto" class="btn">Contáctanos</a>
   </section>
 
   <section id="nosotros">
     <h3>Quiénes Somos</h3>
-    <p>Ofrecemos soluciones de RRHH diseñadas para construir equipos sólidos, comprometidos y alineados con los valores de tu organización.</p>
-    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Equipo de trabajo en oficina moderna">
+    <p><strong>Misión y Foco:</strong> Ofrecemos soluciones de Recursos Humanos a PyMEs para construir equipos sólidos. Nos enfocamos en negocios del sector Servicios y Tecnología que buscan formalizar su gestión de personas para escalar de forma sostenible.</p>
+    <p><strong>Valores Clave:</strong> Trato Humano y Ética | Foco en PyMEs</p>
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Equipo en oficina profesional">
   </section>
 
-  <section id="servicios">
-    <h3>Servicios</h3>
-    <p>Brindamos servicios de selección de personal, evaluación de desempeño, análisis de puestos, capacitación y desarrollo organizacional.</p>
+  <section id="ventaja">
+    <h3>Nuestra Ventaja Competitiva</h3>
+    <p><strong>Enfoque a Medida:</strong> Creamos estrategias que responden a las necesidades específicas, escala y presupuesto de las PyMEs, adaptadas a su cultura organizacional.</p>
+    <p><strong>Gestión por Competencias:</strong> Utilizamos metodologías innovadoras, como la técnica STAR, que garantizan incorporar talento de alto desempeño y una planificación de carrera sostenible.</p>
+    <p><strong>Trato Humano y Ética:</strong> Nuestra empatía asegura soluciones que priorizan el bienestar de las personas y la sustentabilidad.</p>
     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80" alt="Reunión profesional en oficina">
   </section>
 
+  <section id="servicios">
+    <h3>Portafolio de Soluciones</h3>
+    <p><strong>Selección de Personal por Competencias:</strong> Garantizamos la incorporación de personas con habilidades técnicas y valores alineados a la empresa.</p>
+    <p><strong>Análisis y Descripción de Puestos:</strong> Elaboramos perfiles detallados que definen responsabilidades, tareas clave y requerimientos.</p>
+    <p><strong>Diseño de Estructuras Organizativas:</strong> Optimizamos flujos de trabajo, roles y especialización.</p>
+    <p><strong>Evaluación de Desempeño y Clima:</strong> Diagnosticamos el clima laboral e implementamos planes de mejora.</p>
+    <p><strong>Planes de Capacitación y Desarrollo:</strong> Diseñamos programas de formación continua para potenciar las competencias del equipo.</p>
+    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Capacitación y trabajo en equipo">
+  </section>
+
   <section id="trabaja">
-    <h3>Trabajá con Nosotros</h3>
-    <p>Buscamos Analista Jr. de Selección. Si sos proactivo, organizado y te apasiona la gestión del talento, ¡sumate a nuestro equipo!</p>
+    <h3>Únete al Equipo</h3>
+    <p><strong>Vacante Destacada:</strong> Analista Jr. de Selección</p>
+    <p>Buscamos talento con iniciativa y orientación a la calidad para incorporarse a nuestra área de Selección de Personal.</p>
+    <p><strong>Modalidad:</strong> Trabajo mixto (presencial y teletrabajo) de lunes a viernes, jornada full-time.</p>
+    <p><strong>Formación:</strong> Programas de capacitación continua en metodologías de selección y gestión de RRHH.</p>
+    <p><strong>Crecimiento:</strong> Posibilidad de ascenso a Analista Sr. de Selección.</p>
+    <p><em>Ambiente colaborativo y dinámico, enfocado en la mejora continua y el aprendizaje en equipo.</em></p>
     <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Consultores trabajando en equipo">
   </section>
 
   <section id="contacto">
     <h3>Contacto</h3>
-    <p>¿Listo para potenciar tu equipo? Escribinos y agendá una consulta sin compromiso.</p>
+    <p><strong>¿Listo para potenciar tu equipo?</strong><br>
+    Agenda una consulta sin compromiso. Conversemos sobre las necesidades específicas de tu PyME o emprendimiento.</p>
     <p><strong>Email:</strong> consultoraintegral@gmail.com<br>
       <strong>Teléfono:</strong> 343-5174-59000</p>
     <a href="mailto:consultoraintegral@gmail.com" class="btn">Enviar Correo</a>
@@ -174,5 +212,19 @@
   <footer>
     &copy; 2025 Integral Consultora RRHH - Todos los derechos reservados
   </footer>
+
+  <script>
+    // Efecto de aparición al hacer scroll
+    const sections = document.querySelectorAll("section");
+    const showOnScroll = () => {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add("visible");
+      });
+    };
+    window.addEventListener("scroll", showOnScroll);
+    showOnScroll();
+  </script>
 </body>
 </html>
