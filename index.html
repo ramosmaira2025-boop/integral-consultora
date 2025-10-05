@@ -1,239 +1,512 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>INTEGRAL CONSULTORA RRHH</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (iconos) -->
+  <script src="https://kit.fontawesome.com/3b2b9f6a2b.js" crossorigin="anonymous"></script>
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root{
+      --azul-oscuro:#0a3b5f;       /* color institucional profundo */
+      --azul-medio:#0b63a6;       /* acentos */
+      --azul-claro:#2b9fe6;       /* botones */
+      --gris:#f3f7fb;
+      --texto:#123047;
+      --radius:14px;
+      --shadow: 0 10px 30px rgba(10,20,40,0.15);
+      --glass: rgba(255,255,255,0.06);
+      --maxw:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, Arial, sans-serif;
+      color:var(--texto);
+      background:linear-gradient(180deg, #ffffff 0%, #f5f9ff 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
     }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      color: #002244;
-      background-color: #f7f9fc;
-      line-height: 1.6;
+    /* NAV */
+    header.top {
+      background: var(--azul-oscuro);
+      color:white;
+      text-align:center;
+      padding:28px 18px 16px;
+    }
+    header.top .brand{
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+    header.top h1{
+      margin:6px 0 6px;
+      font-size:30px;
+      letter-spacing:2px;
+      font-weight:800;
+      text-transform:uppercase;
+    }
+    header.top p.lead{
+      margin:6px 0 0;
+      color:rgba(255,255,255,0.9);
+      font-size:18px;
+      opacity:0.95;
     }
 
-    header {
-      background: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-      animation: fadeIn 2s ease;
+    /* nav botones */
+    nav.mainnav{
+      background:linear-gradient(90deg,var(--azul-oscuro), #0a4f78);
+      padding:10px 0;
+      box-shadow: 0 6px 20px rgba(3,17,34,0.12);
+    }
+    nav .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      padding:6px;
+    }
+    .nav-btn{
+      background:linear-gradient(180deg,var(--azul-medio), var(--azul-claro));
+      color:white;
+      padding:8px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      box-shadow:0 6px 18px rgba(11,99,166,0.15);
+      transition:transform .18s ease, box-shadow .18s;
+    }
+    .nav-btn:hover{ transform:translateY(-4px); box-shadow:0 18px 30px rgba(11,99,166,0.18) }
+
+    /* HERO */
+    .hero{
+      position:relative;
+      background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3a8ad6d28c2f9f6a2b3d8c3fb1d6c44f');
+      background-size:cover;
+      background-position:center;
+      color:white;
+      padding:80px 16px 120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;
+    }
+    /* overlay para que el texto se vea */
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(10,34,60,0.78) 0%, rgba(6,22,40,0.5) 55%, rgba(6,22,40,0.3) 100%);
+      z-index:0;
+    }
+    .hero .container{
+      position:relative;
+      z-index:2;
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:0 18px;
+    }
+    .hero h2{
+      margin:12px 0;
+      font-size:36px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:2px;
+      color:var(--gris);
+      text-shadow:0 6px 30px rgba(0,0,0,0.45);
+    }
+    .hero p.lead{
+      font-size:20px;
+      color: rgba(235,245,255,0.95);
+      margin:10px 0 20px;
+    }
+    .cta{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:999px;
+      background:linear-gradient(180deg,var(--azul-claro), var(--azul-medio));
+      color:white;
+      font-weight:700;
+      box-shadow:var(--shadow);
+      text-decoration:none;
+      transition:transform .16s;
+    }
+    .cta:hover{ transform:translateY(-4px) }
+
+    /* servicios */
+    .section{
+      max-width:var(--maxw);
+      margin:40px auto;
+      padding:30px 20px;
+    }
+    .titulo{
+      text-align:center;
+      margin-bottom:28px;
+    }
+    .titulo h3{
+      color:var(--azul-oscuro);
+      font-size:28px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin:6px 0;
+    }
+    .titulo p.sub{
+      color:#2f4f6a;
+      margin:0;
+      font-size:18px;
     }
 
-    header h1 {
-      font-size: 2.5em;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: bold;
+    .services{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:20px;
+      margin-top:26px;
+    }
+    .card{
+      background:white;
+      padding:22px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      transition:transform .18s, box-shadow .18s;
+      min-height:160px;
+    }
+    .card:hover{ transform:translateY(-8px); box-shadow:0 22px 40px rgba(10,20,40,0.12) }
+    .card .ico{
+      font-size:28px;
+      color:var(--azul-medio);
+      margin-bottom:12px;
+    }
+    .card h4{ margin:8px 0; color:var(--azul-oscuro); text-transform:uppercase; font-size:16px}
+    .card p{ color:#475a6b; font-size:14px; margin:8px 0 0 }
+
+    /* diseño portafolio en fila con iconos */
+    .portfolio{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+      margin-top:26px;
+    }
+    .portfolio .item{
+      background:linear-gradient(180deg,#fff,#f7fbff);
+      padding:20px;
+      border-radius:12px;
+      border-left:6px solid var(--azul-claro);
+      transition: transform .18s, box-shadow .18s;
+      box-shadow: 0 8px 24px rgba(9,25,45,0.06);
+    }
+    .portfolio .item:hover{ transform:translateY(-6px) }
+    .portfolio .item h5{ color:var(--azul-medio); text-transform:uppercase; margin:0 0 8px; font-weight:700}
+    .portfolio .item p{ color:#425a6b; margin:0; font-size:14px }
+
+    /* TRABAJA CON NOSOTROS - CTA grande */
+    .join{
+      background:linear-gradient(180deg, rgba(3,28,60,0.96), rgba(8,58,96,0.88));
+      color:white;
+      padding:56px 18px;
+      border-radius:10px;
+      margin:30px 0;
+      text-align:center;
+      background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b2e3d1d0f1b5e4e6a8f9a06d9f1f2a0');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .join::before{
+      content:"";
+      position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,58,96,0.78), rgba(3,22,40,0.6));
+    }
+    .join .inner{ position:relative; z-index:2; max-width:900px; margin:0 auto; }
+    .join h3{ font-size:28px; text-transform:uppercase; letter-spacing:1px; margin:0 0 10px; color:#fff }
+    .join p{ color:rgba(255,255,255,0.95); font-size:18px; margin-bottom:18px }
+    .join .btn-white{
+      background:white; color:var(--azul-oscuro); padding:12px 20px; border-radius:999px; font-weight:700; text-decoration:none;
+      box-shadow:0 12px 30px rgba(1,20,40,0.2);
     }
 
-    header p {
-      font-size: 1.3em;
-      margin-top: 10px;
+    /* TRABAJA: tarjetas vacante */
+    .vacantes{
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:20px;
+    }
+    .vac-card{
+      background:rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+      padding:18px;
+      border-radius:12px;
+      min-width:260px;
+      color:white;
+      border:1px solid rgba(255,255,255,0.06);
+    }
+    .vac-card h4{ margin:0 0 8px; font-size:18px }
+
+    /* CONTACTO */
+    .contact{
+      max-width:var(--maxw);
+      margin:30px auto 60px;
+      padding:30px 18px;
+      display:flex;
+      gap:20px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .contact .left{
+      flex:1 1 420px;
+      background:white;
+      padding:22px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+    .contact .right{
+      flex:0 1 300px;
+      background:linear-gradient(180deg,#002f57, #084d79);
+      color:white;
+      padding:22px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+    }
+    .contact label{ display:block; font-weight:700; margin-bottom:8px; color:#123047 }
+    .contact input, .contact textarea{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid #dbeaf7;
+      margin-bottom:12px;
+      font-size:14px;
+    }
+    .contact button{
+      background:var(--azul-oscuro);
+      color:white;
+      padding:10px 16px;
+      border-radius:10px;
+      border:0;
+      font-weight:700;
     }
 
-    nav {
-      background-color: #0044a0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 10px 0;
+    /* footer */
+    footer{
+      padding:20px 12px;
+      text-align:center;
+      color:#6b7b8b;
+      font-size:14px;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px 12px;
-      padding: 8px 18px;
-      border-radius: 25px;
-      background: #0079cb;
-      transition: all 0.3s ease;
+    /* Animaciones al aparecer */
+    .fade-in { opacity:0; transform:translateY(8px); animation:fadeInUp .9s forwards; }
+    .delay-1{ animation-delay:.15s }
+    .delay-2{ animation-delay:.3s }
+    .delay-3{ animation-delay:.45s }
+    @keyframes fadeInUp{
+      to{ opacity:1; transform:translateY(0) }
     }
 
-    nav a:hover {
-      background-color: white;
-      color: #0044a0;
-      transform: scale(1.05);
-    }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-      background-color: white;
-      margin-bottom: 30px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 1000px;
-      margin: 40px auto;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      animation: slideUp 1.5s ease;
-    }
-
-    h2 {
-      font-size: 2em;
-      text-transform: uppercase;
-      color: #0044a0;
-      margin-bottom: 20px;
-    }
-
-    h3 {
-      color: #0079cb;
-      margin-bottom: 10px;
-    }
-
-    .icon {
-      font-size: 2em;
-      color: #0079cb;
-      margin-bottom: 15px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .service {
-      background: #f2f5fa;
-      padding: 25px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .service:hover {
-      background: #0079cb;
-      color: white;
-      transform: scale(1.05);
-    }
-
-    footer {
-      background-color: #0044a0;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    @keyframes slideUp {
-      from {opacity: 0; transform: translateY(30px);}
-      to {opacity: 1; transform: translateY(0);}
+    /* Responsive */
+    @media (max-width:900px){
+      .services{ grid-template-columns:repeat(1,1fr) }
+      .portfolio{ grid-template-columns:repeat(1,1fr) }
+      .hero h2{ font-size:28px }
+      .hero p.lead{ font-size:16px }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>INTEGRAL CONSULTORA RRHH</h1>
-    <p>GESTIÓN DE TALENTO A TU MEDIDA</p>
+  <!-- TOP HEADER -->
+  <header class="top">
+    <div class="brand">
+      <!-- Si querés usar tu imagen logo local (subida al repo) -> sustituir la línea siguiente por:
+      <img src="logotipo_integral.jpg" alt="Logo Integral Consultora" style="max-height:84px;border-radius:8px;">
+      -->
+      <div style="height:8px"></div>
+      <h1>INTEGRAL CONSULTORA RRHH</h1>
+      <p class="lead">Gestión de talento a tu medida.</p>
+    </div>
   </header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#quienes">Nosotros</a>
-    <a href="#ventajas">Ventajas</a>
-    <a href="#portafolio">Portafolio</a>
-    <a href="#trabaja">Trabajá con Nosotros</a>
-    <a href="#contacto">Contacto</a>
+  <!-- NAV -->
+  <nav class="mainnav">
+    <div class="wrap">
+      <a class="nav-btn" href="#inicio">Inicio</a>
+      <a class="nav-btn" href="#servicios">Servicios</a>
+      <a class="nav-btn" href="#portafolio">Portafolio</a>
+      <a class="nav-btn" href="#trabaja">Trabajá con Nosotros</a>
+      <a class="nav-btn" href="#contacto">Contacto</a>
+    </div>
   </nav>
 
-  <section id="inicio">
-    <h2>TU ALIADO ESTRATÉGICO EN RRHH</h2>
-    <p>Somos tu aliado estratégico para PyMEs y pequeños emprendimientos. Ofrecemos soluciones de gestión de talento que promueven el crecimiento a través de equipos sólidos y comprometidos.</p>
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="container fade-in delay-1">
+      <h2>Gestión de talento a tu medida</h2>
+      <p class="lead">Somos tu aliado estratégico para PyMEs y emprendimientos. Soluciones de RRHH para formar equipos comprometidos y sostenibles.</p>
+      <a class="cta" href="#contacto">Agenda tu consulta</a>
+    </div>
   </section>
 
-  <section id="quienes">
-    <h2>NUESTRA IDENTIDAD</h2>
-    <h3>MISIÓN Y FOCO</h3>
-    <p>Ofrecer soluciones de Recursos Humanos a PyMEs para construir equipos sólidos, enfocados en negocios del sector Servicios y Tecnología que buscan formalizar su gestión de personas.</p>
-    <h3>VALORES CLAVE</h3>
-    <p>Trato Humano y Ética | Foco en PyMEs.</p>
-  </section>
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <div class="titulo">
+      <h3>SERVICIOS</h3>
+      <p class="sub">Ofrecemos soluciones de RRHH diseñadas para construir equipos sólidos y alineados con los valores de tu organización.</p>
+    </div>
 
-  <section id="ventajas">
-    <h2>NUESTRA VENTAJA COMPETITIVA</h2>
-    <div class="services-grid">
-      <div class="service">
-        <i class="fa-solid fa-user-tie icon"></i>
-        <h3>ENFOQUE A MEDIDA</h3>
-        <p>Diseñamos estrategias que se adaptan a las necesidades, escala y cultura organizacional de cada PyME.</p>
+    <div class="services">
+      <div class="card fade-in delay-2">
+        <div class="ico"><i class="fas fa-user-check"></i></div>
+        <h4>SELECCIÓN POR COMPETENCIAS</h4>
+        <p>Procesos por competencias para asegurar ajuste técnico y cultural (metodología STAR).</p>
       </div>
-      <div class="service">
-        <i class="fa-solid fa-chart-line icon"></i>
-        <h3>GESTIÓN POR COMPETENCIAS</h3>
-        <p>Aplicamos metodologías como la técnica STAR para asegurar desempeño superior y desarrollo sostenible.</p>
+
+      <div class="card fade-in delay-3">
+        <div class="ico"><i class="fas fa-file-alt"></i></div>
+        <h4>ANÁLISIS Y DESCRIPCIÓN DE PUESTOS</h4>
+        <p>Elaboramos ADyP claros y prácticos para cada puesto: tareas, responsabilidades y perfil requerido.</p>
       </div>
-      <div class="service">
-        <i class="fa-solid fa-handshake icon"></i>
-        <h3>TRATO HUMANO Y ÉTICA</h3>
-        <p>Nuestro valor principal es la empatía, priorizando el bienestar de las personas y la sustentabilidad.</p>
+
+      <div class="card fade-in delay-2">
+        <div class="ico"><i class="fas fa-sitemap"></i></div>
+        <h4>DISEÑO ORGANIZATIVO</h4>
+        <p>Diseño y rediseño de estructuras para optimizar flujos y especialización de roles.</p>
       </div>
     </div>
   </section>
 
-  <section id="portafolio">
-    <h2>PORTAFOLIO DE SOLUCIONES</h2>
-    <div class="services-grid">
-      <div class="service">
-        <i class="fa-solid fa-briefcase icon"></i>
-        <h3>SELECCIÓN POR COMPETENCIAS</h3>
-        <p>Buscamos el ajuste ideal entre talento y cultura empresarial mediante entrevistas basadas en competencias.</p>
+  <!-- PORTAFOLIO -->
+  <section id="portafolio" class="section">
+    <div class="titulo">
+      <h3>PORTAFOLIO DE SOLUCIONES</h3>
+      <p class="sub">Subsistemas críticos de RRHH adaptados a la PyME.</p>
+    </div>
+
+    <div class="portfolio fade-in delay-1">
+      <div class="item">
+        <h5><i class="fas fa-briefcase" style="margin-right:8px;color:var(--azul-medio)"></i> SELECCIÓN POR COMPETENCIAS</h5>
+        <p>Búsqueda y entrevistas por competencias para conseguir ajuste técnico y cultural.</p>
       </div>
-      <div class="service">
-        <i class="fa-solid fa-list-check icon"></i>
-        <h3>ANÁLISIS Y DESCRIPCIÓN DE PUESTOS</h3>
-        <p>Definimos objetivos, responsabilidades y el perfil ideal de cada puesto clave dentro de la empresa.</p>
+
+      <div class="item">
+        <h5><i class="fas fa-file-signature" style="margin-right:8px;color:var(--azul-medio)"></i> ANÁLISIS DE PUESTOS</h5>
+        <p>Documentos detallados con responsabilidades y perfiles para cada puesto.</p>
       </div>
-      <div class="service">
-        <i class="fa-solid fa-diagram-project icon"></i>
-        <h3>DISEÑO ORGANIZATIVO</h3>
-        <p>Optimizamos estructuras y roles para maximizar eficiencia y fomentar la especialización del talento.</p>
+
+      <div class="item">
+        <h5><i class="fas fa-project-diagram" style="margin-right:8px;color:var(--azul-medio)"></i> DISEÑO ORGANIZATIVO</h5>
+        <p>Optimización de estructuras y roles para maximizar eficiencia y especialización.</p>
       </div>
-      <div class="service">
-        <i class="fa-solid fa-people-group icon"></i>
-        <h3>EVALUACIÓN DE CLIMA Y DESEMPEÑO</h3>
-        <p>Realizamos diagnósticos de clima laboral y acciones de mejora para potenciar la productividad.</p>
+
+      <div class="item">
+        <h5><i class="fas fa-users-cog" style="margin-right:8px;color:var(--azul-medio)"></i> EVALUACIÓN DE CLIMA</h5>
+        <p>Diagnóstico y plan de acción para mejorar satisfacción y productividad.</p>
       </div>
-      <div class="service">
-        <i class="fa-solid fa-graduation-cap icon"></i>
-        <h3>CAPACITACIÓN Y DESARROLLO</h3>
-        <p>Diseñamos planes de formación continua para impulsar el crecimiento profesional dentro de tu equipo.</p>
+
+      <div class="item">
+        <h5><i class="fas fa-chalkboard-teacher" style="margin-right:8px;color:var(--azul-medio)"></i> PLANES DE CAPACITACIÓN</h5>
+        <p>Programas de formación a medida para potenciar competencias individuales y del equipo.</p>
+      </div>
+
+      <div class="item">
+        <h5><i class="fas fa-rocket" style="margin-right:8px;color:var(--azul-medio)"></i> GESTIÓN POR COMPETENCIAS</h5>
+        <p>Implementación de modelos y entrevistas por competencias (STAR).</p>
       </div>
     </div>
   </section>
 
-  <section id="trabaja">
-    <h2>TRABAJÁ CON NOSOTROS</h2>
-    <p><strong>Vacante Destacada:</strong> Analista Jr. de Selección</p>
-    <p>Buscamos personas con iniciativa y orientación a la calidad para sumarse a nuestro equipo de RRHH.</p>
-    <ul style="list-style:none; margin-top:15px;">
-      <li>📍 Modalidad Mixta: Presencial + Home Office</li>
-      <li>🎓 Formación y desarrollo continuo</li>
-      <li>🚀 Posibilidades de crecimiento profesional</li>
-    </ul>
+  <!-- JOIN / TRABAJA CON NOSOTROS -->
+  <section id="trabaja" class="section">
+    <div class="join fade-in delay-2">
+      <div class="inner">
+        <h3>TRABAJÁ CON NOSOTROS</h3>
+        <p>¿Querés formar parte de un equipo que impulsa el crecimiento con foco humano? Buscamos personas proactivas y con ganas de crecer.</p>
+
+        <div class="vacantes" role="list">
+          <div class="vac-card" role="listitem">
+            <h4>Analista Jr. de Selección</h4>
+            <p>Modalidad: Mixta (Presencial + Home office). Jornada Full-time.</p>
+            <ul style="color:rgba(255,255,255,0.9);margin:8px 0 0;padding-left:18px">
+              <li>Formación y desarrollo continuo</li>
+              <li>Posibilidad de ascenso</li>
+              <li>Ambiente colaborativo</li>
+            </ul>
+            <div style="margin-top:10px"><a class="btn-white" href="#contacto">Postular</a></div>
+          </div>
+
+          <div class="vac-card" role="listitem">
+            <h4>Soporte de Consultoría</h4>
+            <p>Buscamos apoyo para gestión de avisos, filtrado de CVs y coordinación con candidatos.</p>
+            <div style="margin-top:10px"><a class="btn-white" href="#contacto">Postular</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <section id="contacto">
-    <h2>CONTACTO</h2>
-    <p>¿Listo para potenciar tu equipo? Agenda una consulta sin compromiso.</p>
-    <p><strong>Email:</strong> consultoraintegral@gmail.com</p>
-    <p><strong>Teléfono:</strong> 343-5174-59000</p>
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact">
+    <div class="left fade-in delay-1">
+      <h3>¿Listo para potenciar tu equipo?</h3>
+      <p>Agenda una consulta sin compromiso. Conversemos sobre las necesidades específicas de tu PyME.</p>
+
+      <form onsubmit="event.preventDefault(); alert('Gracias — recibimos tu mensaje (demo).')">
+        <label for="name">Nombre</label>
+        <input id="name" placeholder="Tu nombre" required>
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="consultor@empresa.com" required>
+        <label for="msg">Mensaje</label>
+        <textarea id="msg" rows="4" placeholder="Contanos brevemente tu proyecto..." required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </div>
+
+    <aside class="right fade-in delay-2">
+      <h4 style="margin-top:0">CONTACTO</h4>
+      <p style="font-weight:700; font-size:18px; margin:6px 0 2px">consultoraintegral@gmail.com</p>
+      <p style="font-weight:700; font-size:18px; margin:6px 0 14px">343-5174-59000</p>
+
+      <p style="opacity:.9; margin-top:8px">
+        Dirección: Consultas remotas & atención personalizada. <br>
+        Horario: Lun–Vie 9:00–18:00.
+      </p>
+    </aside>
   </section>
 
   <footer>
-    &copy; 2025 Integral Consultora RRHH | Todos los derechos reservados
+    <div style="max-width:var(--maxw); margin:0 auto; padding:8px 12px">
+      <small>© <strong>INTEGRAL CONSULTORA RRHH</strong> — Todos los derechos reservados.</small>
+    </div>
   </footer>
 
+  <script>
+    // pequeño script para animar elementos al hacer scroll (simple)
+    document.addEventListener('DOMContentLoaded', function(){
+      const observers = document.querySelectorAll('.fade-in');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(ent => {
+          if(ent.isIntersecting){
+            ent.target.style.animationPlayState = 'running';
+            ent.target.classList.remove('fade-in'); // evita repetir
+          }
+        });
+      }, {threshold:0.12});
+      observers.forEach(el => {
+        el.style.animationPlayState = 'paused';
+        io.observe(el);
+      });
+    });
+  </script>
 </body>
-</html>
+        </html>consultora-integral
