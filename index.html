@@ -51,22 +51,23 @@
     }
 
     .hero {
-      background: url("https://images.unsplash.com/photo-1598257006626-48b0c252070d?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
+      background-color: #002b5b;
       color: white;
       text-align: center;
       padding: 120px 20px;
-      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
     }
 
     .hero h2 {
       font-size: 2em;
       margin-bottom: 10px;
+      animation: fadeInUp 1.2s ease;
     }
 
     .hero p {
       font-size: 1.2em;
       margin-bottom: 25px;
+      animation: fadeInUp 1.8s ease;
     }
 
     .btn {
@@ -77,10 +78,16 @@
       border-radius: 25px;
       text-decoration: none;
       transition: 0.3s;
+      animation: fadeInUp 2.4s ease;
     }
 
     .btn:hover {
       background-color: #0066cc;
+    }
+
+    @keyframes fadeInUp {
+      0% {opacity: 0; transform: translateY(20px);}
+      100% {opacity: 1; transform: translateY(0);}
     }
 
     section {
@@ -88,6 +95,7 @@
       max-width: 1000px;
       margin: auto;
       text-align: center;
+      animation: fadeInUp 1.2s ease;
     }
 
     section h3 {
@@ -132,8 +140,8 @@
   </nav>
 
   <section class="hero" id="inicio">
-    <h2>Tu aliado estratégico en Recursos Humanos</h2>
-    <p>Impulsamos el crecimiento de tu empresa con soluciones adaptadas a PyMEs y emprendimientos.</p>
+    <h2>Brindamos soluciones integrales para tu empresa</h2>
+    <p>Gestión estratégica del talento humano adaptada a las necesidades de cada PyME y emprendimiento.</p>
     <a href="#contacto" class="btn">Contáctanos</a>
   </section>
 
