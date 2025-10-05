@@ -12,413 +12,195 @@
     }
 
     body {
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      background-color: #0a2240;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #ffffff;
+      background-color: #001a33;
+      background-image: linear-gradient(rgba(0, 0, 34, 0.8), rgba(0, 0, 34, 0.8)), 
+        url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
       line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
-      background-color: #0a2240;
       text-align: center;
       padding: 40px 20px;
-      border-bottom: 4px solid #1e3d7a;
+      background-color: rgba(0, 34, 64, 0.8);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: fadeIn 1.5s ease-in-out;
     }
 
     header img {
-      width: 130px;
-      margin-bottom: 15px;
+      width: 120px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
     header h1 {
-      font-size: 2em;
-      margin-bottom: 5px;
+      font-size: 2.2rem;
+      margin-top: 10px;
+      letter-spacing: 1px;
     }
 
     header p {
-      font-size: 1.1em;
-      color: #cdd6e0;
+      color: #cdd6f4;
+      font-size: 1.1rem;
     }
 
     nav {
-      background-color: #1e3d7a;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      background-color: #003366;
+      padding: 12px 0;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      animation: slideDown 1s ease-in-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 14px 20px;
-      display: inline-block;
-      transition: background 0.3s;
+      margin: 0 20px;
+      padding: 8px 16px;
+      border-radius: 30px;
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #284b8a;
+      background-color: #007bff;
+      transform: scale(1.1);
     }
 
     section {
-      padding: 40px 20px;
       text-align: center;
-      background-color: #f5f7fa;
-      color: #0a2240;
+      padding: 60px 20px;
+      animation: fadeUp 1.2s ease-in-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     section h2 {
-      font-size: 1.8em;
+      font-size: 2rem;
+      color: #80bfff;
       margin-bottom: 20px;
-      color: #0a2240;
     }
 
     section p {
-      font-size: 1.1em;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #dfe9f3;
+      font-size: 1.1rem;
     }
 
-    .imagenes {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .imagenes img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      background-color: #007bff;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
+    .btn:hover {
+      background-color: #339cff;
+      transform: scale(1.05);
+    }
+
     footer {
-      background-color: #0a2240;
-      color: white;
+      background-color: #001a33;
       text-align: center;
       padding: 20px;
-      margin-top: 30px;
-      border-top: 4px solid #1e3d7a;
-      font-size: 0.9em;
+      font-size: 0.9rem;
+      color: #9eb3c9;
+    }
+
+    /* Botón de WhatsApp */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://i.imgur.com/4KJYFUt.png" alt="Logo Integral Consultora">
+    <img src="https://ramosmaira2025-boop.github.io/integral-consultora/logo.png" alt="Logo Integral Consultora">
     <h1>Integral Consultora</h1>
     <p>Asesoramiento profesional en gestión y negocios</p>
   </header>
 
   <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Nosotros</a>
-    <a href="#">Contacto</a>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
   </nav>
 
-  <section>
+  <section id="inicio">
     <h2>Bienvenidos</h2>
-    <p>
-      En <strong>Integral Consultora</strong> brindamos soluciones personalizadas que potencian el crecimiento de tu empresa. 
-      Nuestro equipo profesional te acompaña en cada etapa del proceso, ofreciendo estrategias integrales en gestión, 
-      administración y desarrollo de negocios.
-    </p>
+    <p>En <b>Integral Consultora</b> ofrecemos soluciones estratégicas adaptadas a las necesidades de tu empresa. Nuestro equipo te acompaña en cada paso hacia el crecimiento y la eficiencia.</p>
+    <a href="#contacto" class="btn">Contáctanos</a>
+  </section>
 
-    <div class="imagenes">
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Oficina moderna">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Reunión de trabajo">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Equipo en oficina">
-    </div>
+  <section id="servicios" style="background-color: rgba(255,255,255,0.05);">
+    <h2>Servicios</h2>
+    <p>✔ Consultoría empresarial<br>
+       ✔ Gestión de proyectos<br>
+       ✔ Planificación financiera<br>
+       ✔ Capacitación y liderazgo<br>
+       ✔ Asesoramiento en RRHH</p>
+  </section>
+
+  <section id="nosotros">
+    <h2>Nosotros</h2>
+    <p>Somos un equipo multidisciplinario comprometido con la mejora continua de empresas, organizaciones e instituciones. Nuestro objetivo es ayudarte a alcanzar el máximo potencial.</p>
+  </section>
+
+  <section id="contacto" style="background-color: rgba(255,255,255,0.05);">
+    <h2>Contacto</h2>
+    <p>📍 Buenos Aires, Argentina<br>
+       📧 contacto@integralconsultora.com<br>
+       ☎ +54 11 1234-5678</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Integral Consultora - Todos los derechos reservados</p>
+    <p>&copy; 2025 Integral Consultora — Todos los derechos reservados.</p>
   </footer>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integral Consultora</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      background-color: #0a2240;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #0a2240;
-      text-align: center;
-      padding: 40px 20px;
-      border-bottom: 4px solid #1e3d7a;
-    }
-
-    header img {
-      width: 130px;
-      margin-bottom: 15px;
-    }
-
-    header h1 {
-      font-size: 2em;
-      margin-bottom: 5px;
-    }
-
-    header p {
-      font-size: 1.1em;
-      color: #cdd6e0;
-    }
-
-    nav {
-      background-color: #1e3d7a;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #284b8a;
-    }
-
-    section {
-      padding: 40px 20px;
-      text-align: center;
-      background-color: #f5f7fa;
-      color: #0a2240;
-    }
-
-    section h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      color: #0a2240;
-    }
-
-    section p {
-      font-size: 1.1em;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
-    }
-
-    .imagenes {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .imagenes img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    footer {
-      background-color: #0a2240;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-      border-top: 4px solid #1e3d7a;
-      font-size: 0.9em;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="https://i.imgur.com/4KJYFUt.png" alt="Logo Integral Consultora">
-    <h1>Integral Consultora</h1>
-    <p>Asesoramiento profesional en gestión y negocios</p>
-  </header>
-
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Nosotros</a>
-    <a href="#">Contacto</a>
-  </nav>
-
-  <section>
-    <h2>Bienvenidos</h2>
-    <p>
-      En <strong>Integral Consultora</strong> brindamos soluciones personalizadas que potencian el crecimiento de tu empresa. 
-      Nuestro equipo profesional te acompaña en cada etapa del proceso, ofreciendo estrategias integrales en gestión, 
-      administración y desarrollo de negocios.
-    </p>
-
-    <div class="imagenes">
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Oficina moderna">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Reunión de trabajo">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Equipo en oficina">
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Integral Consultora - Todos los derechos reservados</p>
-  </footer>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integral Consultora</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      background-color: #0a2240;
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: #0a2240;
-      text-align: center;
-      padding: 40px 20px;
-      border-bottom: 4px solid #1e3d7a;
-    }
-
-    header img {
-      width: 130px;
-      margin-bottom: 15px;
-    }
-
-    header h1 {
-      font-size: 2em;
-      margin-bottom: 5px;
-    }
-
-    header p {
-      font-size: 1.1em;
-      color: #cdd6e0;
-    }
-
-    nav {
-      background-color: #1e3d7a;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      display: inline-block;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #284b8a;
-    }
-
-    section {
-      padding: 40px 20px;
-      text-align: center;
-      background-color: #f5f7fa;
-      color: #0a2240;
-    }
-
-    section h2 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-      color: #0a2240;
-    }
-
-    section p {
-      font-size: 1.1em;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
-    }
-
-    .imagenes {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .imagenes img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-
-    footer {
-      background-color: #0a2240;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-      border-top: 4px solid #1e3d7a;
-      font-size: 0.9em;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <img src="https://i.imgur.com/4KJYFUt.png" alt="Logo Integral Consultora">
-    <h1>Integral Consultora</h1>
-    <p>Asesoramiento profesional en gestión y negocios</p>
-  </header>
-
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Nosotros</a>
-    <a href="#">Contacto</a>
-  </nav>
-
-  <section>
-    <h2>Bienvenidos</h2>
-    <p>
-      En <strong>Integral Consultora</strong> brindamos soluciones personalizadas que potencian el crecimiento de tu empresa. 
-      Nuestro equipo profesional te acompaña en cada etapa del proceso, ofreciendo estrategias integrales en gestión, 
-      administración y desarrollo de negocios.
-    </p>
-
-    <div class="imagenes">
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Oficina moderna">
-      <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Reunión de trabajo">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Equipo en oficina">
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Integral Consultora - Todos los derechos reservados</p>
-  </footer>
+  <a href="https://wa.me/5491123456789" class="whatsapp" target="_blank">💬</a>
 
 </body>
 </html>
