@@ -3,195 +3,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integral Consultora</title>
+  <title>Integral Consultora RRHH</title>
   <style>
-    /* Estilos generales */
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
+    /* ===== ESTILOS GENERALES ===== */
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f5f7fa;
-      color: #002240;
-      line-height: 1.6;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
       scroll-behavior: smooth;
     }
 
+    body {
+      background-color: #f8f9fc;
+      color: #002240;
+      line-height: 1.6;
+    }
+
     header {
-      background-color: #002a5c;
+      background-color: #002240;
       color: white;
       text-align: center;
       padding: 40px 20px;
       position: relative;
-      overflow: hidden;
     }
 
     header img {
-      width: 140px;
-      margin-bottom: 10px;
+      width: 120px;
+      display: block;
+      margin: 0 auto 15px auto;
       animation: fadeIn 2s ease-in-out;
     }
 
     header h1 {
-      margin: 10px 0;
-      font-size: 2rem;
-      letter-spacing: 2px;
-      animation: slideIn 1.5s ease;
+      font-size: 2.3em;
+      letter-spacing: 1px;
+      animation: slideDown 1.5s ease-in-out;
     }
 
     header p {
-      font-size: 1.1rem;
-      color: #bcd2f5;
+      font-size: 1.2em;
+      margin-top: 10px;
+      opacity: 0.9;
     }
 
+    /* ===== NAVEGACIÓN ===== */
     nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       background-color: #004080;
-      padding: 10px 0;
+      padding: 10px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 10px 15px;
-      padding: 8px 18px;
+      margin: 6px 10px;
+      padding: 10px 18px;
+      border-radius: 25px;
       background-color: #0059b3;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      font-weight: 600;
+      transition: all 0.3s ease-in-out;
     }
 
     nav a:hover {
-      background-color: #00a2ff;
-      transform: scale(1.08);
+      background-color: #00aaff;
+      transform: scale(1.05);
     }
 
+    /* ===== SECCIONES ===== */
     section {
       padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
       text-align: center;
-      background: linear-gradient(to bottom, #ffffff, #e9f1ff);
     }
 
     section h2 {
-      color: #002a5c;
-      font-size: 2rem;
+      font-size: 1.9em;
+      color: #002240;
       margin-bottom: 20px;
-      animation: fadeInUp 1.5s ease;
     }
 
     section p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
+      font-size: 1.1em;
       color: #333;
+      margin-bottom: 25px;
     }
 
+    /* ===== BOTONES ===== */
     .btn {
       display: inline-block;
       padding: 12px 25px;
-      background-color: #004080;
+      background-color: #0059b3;
       color: white;
       text-decoration: none;
       border-radius: 25px;
       font-weight: bold;
-      transition: all 0.3s ease;
+      transition: all 0.3s;
     }
 
     .btn:hover {
-      background-color: #0077e6;
+      background-color: #00aaff;
       transform: translateY(-3px);
     }
 
-    footer {
-      background-color: #002a5c;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-
-    /* Animaciones */
+    /* ===== ANIMACIONES ===== */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
 
-    @keyframes slideIn {
-      from { transform: translateY(-30px); opacity: 0; }
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
 
-    @keyframes fadeInUp {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Fondo con imagen */
-    .hero {
-      background: linear-gradient(rgba(0,0,40,0.6), rgba(0,0,80,0.6)),
-                  url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
+    /* ===== PIE DE PÁGINA ===== */
+    footer {
+      background-color: #002240;
       color: white;
-      padding: 100px 20px;
       text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      font-size: 0.9em;
     }
-
-    .hero h2 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #e6f0ff;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
   </style>
 </head>
 <body>
 
+  <!-- ===== CABECERA ===== -->
   <header>
     <img src="logotipo_integral.jpg" alt="Logo Integral Consultora">
-    <h1>INTEGRAL CONSULTORA</h1>
-    <p>Asesoramiento profesional en gestión y negocios</p>
+    <h1>INTEGRAL CONSULTORA RRHH</h1>
+    <p>Gestión de talento a tu medida</p>
   </header>
 
+  <!-- ===== MENÚ ===== -->
   <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#nosotros">Nosotros</a>
+    <a href="#nosotros">Quiénes Somos</a>
+    <a href="#valor">Valor Agregado</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#equipo">Únete al Equipo</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
-  <section id="inicio" class="hero">
-    <h2>Bienvenido a Integral Consultora</h2>
-    <p>Brindamos soluciones integrales para el crecimiento y desarrollo de tu empresa.</p>
+  <!-- ===== SECCIÓN INICIO ===== -->
+  <section id="inicio">
+    <h2>Gestión de talento a tu medida</h2>
+    <p>Somos tu aliado estratégico para PyMEs y pequeños emprendimientos. Ofrecemos soluciones de gestión de talento que promueven el crecimiento a través de equipos sólidos y comprometidos.</p>
     <a href="#contacto" class="btn">Contáctanos</a>
   </section>
 
-  <section id="servicios">
-    <h2>Servicios</h2>
-    <p>Ofrecemos asesoramiento en gestión empresarial, recursos humanos, finanzas y desarrollo organizacional.</p>
-    <a href="#contacto" class="btn">Solicitar Información</a>
-  </section>
-
+  <!-- ===== QUIÉNES SOMOS ===== -->
   <section id="nosotros">
-    <h2>Sobre Nosotros</h2>
-    <p>Somos un equipo de profesionales dedicados a potenciar el crecimiento de las organizaciones, brindando acompañamiento estratégico y soluciones adaptadas a cada necesidad.</p>
+    <h2>Nuestra Identidad</h2>
+    <p><strong>Misión y Foco:</strong> Ofrecer soluciones de Recursos Humanos a PyMEs para construir equipos sólidos. Nos enfocamos en negocios del sector Servicios y Tecnología que buscan formalizar su gestión de personas.</p>
+    <p><strong>Valores Clave:</strong> Trato Humano y Ética | Foco en PyMEs</p>
   </section>
 
+  <!-- ===== VALOR AGREGADO ===== -->
+  <section id="valor">
+    <h2>Nuestra Ventaja Competitiva</h2>
+    <p><strong>Enfoque a Medida:</strong> Creamos estrategias adaptadas a la cultura y escala de tu empresa.</p>
+    <p><strong>Gestión por Competencias:</strong> Aplicamos metodologías como la técnica STAR para asegurar un talento con desempeño superior.</p>
+    <p><strong>Trato Humano y Ética:</strong> La empatía guía todas nuestras decisiones y acciones.</p>
+  </section>
+
+  <!-- ===== PORTAFOLIO ===== -->
+  <section id="portafolio">
+    <h2>Subsistemas Críticos de RRHH</h2>
+    <p><strong>Selección de Personal por Competencias:</strong> Incorporamos personas que encajan técnica y culturalmente.</p>
+    <p><strong>Análisis y Descripción de Puestos:</strong> Documentos claros que definen responsabilidades y perfiles requeridos.</p>
+    <p><strong>Diseño de Estructuras Organizativas:</strong> Optimizamos flujos y roles dentro de tu empresa.</p>
+    <p><strong>Evaluación de Desempeño y Clima:</strong> Diagnóstico y mejora del clima laboral.</p>
+    <p><strong>Planes de Capacitación y Desarrollo:</strong> Diseñamos formación continua para potenciar tus equipos.</p>
+  </section>
+
+  <!-- ===== EQUIPO ===== -->
+  <section id="equipo">
+    <h2>Únete al Equipo</h2>
+    <p><strong>Vacante:</strong> Analista Jr. de Selección</p>
+    <p>Buscamos talento con iniciativa y orientación a la calidad.</p>
+    <p><strong>Beneficios:</strong></p>
+    <ul style="list-style:none; padding:0;">
+      <li>💼 Modalidad Mixta (Presencial y Remoto)</li>
+      <li>📚 Formación Continua</li>
+      <li>🚀 Posibilidad de Crecimiento</li>
+    </ul>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
   <section id="contacto">
-    <h2>Contacto</h2>
-    <p>📧 contacto@integralconsultora.com.ar</p>
-    <p>📞 +54 9 11 5555-5555</p>
+    <h2>¿Listo para potenciar tu equipo?</h2>
+    <p>Agenda una consulta sin compromiso. Conversemos sobre las necesidades específicas de tu PyME o emprendimiento.</p>
+    <p><strong>Email:</strong> consultoraintegral@gmail.com</p>
+    <p><strong>Teléfono:</strong> 343-5174-59000</p>
+    <a href="mailto:consultoraintegral@gmail.com" class="btn">Enviar Email</a>
   </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
-    &copy; 2025 Integral Consultora — Todos los derechos reservados.
+    © 2025 Integral Consultora RRHH — Todos los derechos reservados.
   </footer>
 
 </body>
