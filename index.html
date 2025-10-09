@@ -1,15 +1,14 @@
 <!doctype html>
 
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome (iconos) -->
   <script src="https://kit.fontawesome.com/3b2b9f6a2b.js" crossorigin="anonymous"></script>
 
   <style>
     :root{
-      --azul-oscuro:#0a3b5f;       /* color institucional profundo */
+      /* CAMBIO DE COLOR PRINCIPAL: Ahora es el azul del logo */
+      --azul-oscuro:#044b8b;       /* color institucional profundo */
       --azul-medio:#0b63a6;       /* acentos */
       --azul-claro:#2b9fe6;       /* botones */
       --gris:#f3f7fb;
@@ -55,7 +54,7 @@
       opacity:0.95;
     }
 
-    /* nav botones */
+    /* nav botones (ajuste del gradiente para el nuevo azul) */
     nav.mainnav{
       background:linear-gradient(90deg,var(--azul-oscuro), #0a4f78);
       padding:10px 0;
@@ -102,7 +101,8 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(180deg, rgba(10,34,60,0.78) 0%, rgba(6,22,40,0.5) 55%, rgba(6,22,40,0.3) 100%);
+      /* Ajuste para el nuevo color */
+      background:linear-gradient(180deg, rgba(4,75,139,0.78) 0%, rgba(6,22,40,0.5) 55%, rgba(6,22,40,0.3) 100%);
       z-index:0;
     }
     .hero .container{
@@ -205,9 +205,9 @@
     .portfolio .item h5{ color:var(--azul-medio); text-transform:uppercase; margin:0 0 8px; font-weight:700}
     .portfolio .item p{ color:#425a6b; margin:0; font-size:14px }
 
-    /* TRABAJA CON NOSOTROS - CTA grande */
+    /* TRABAJA CON NOSOTROS - CTA grande (ajuste del gradiente para el nuevo azul) */
     .join{
-      background:linear-gradient(180deg, rgba(3,28,60,0.96), rgba(8,58,96,0.88));
+      background:linear-gradient(180deg, rgba(4,75,139,0.96), rgba(8,58,96,0.88));
       color:white;
       padding:56px 18px;
       border-radius:10px;
@@ -221,7 +221,7 @@
     }
     .join::before{
       content:"";
-      position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,58,96,0.78), rgba(3,22,40,0.6));
+      position:absolute; inset:0; background:linear-gradient(180deg, rgba(4,75,139,0.78), rgba(3,22,40,0.6));
     }
     .join .inner{ position:relative; z-index:2; max-width:900px; margin:0 auto; }
     .join h3{ font-size:28px; text-transform:uppercase; letter-spacing:1px; margin:0 0 10px; color:#fff }
@@ -270,7 +270,8 @@
     }
     .contact .right{
       flex:0 1 300px;
-      background:linear-gradient(180deg,#002f57, #084d79);
+      /* Ajuste del gradiente para el nuevo color */
+      background:linear-gradient(180deg,#044b8b, #084d79);
       color:white;
       padding:22px;
       border-radius:12px;
@@ -331,7 +332,6 @@
   </div>
 </header>
 
-  <!-- NAV -->
   <nav class="mainnav">
     <div class="wrap">
       <a class="nav-btn" href="#inicio">Inicio</a>
@@ -342,7 +342,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section id="inicio" class="hero">
     <div class="container fade-in delay-1">
       <h2>Gestión de talento a tu medida</h2>
@@ -351,7 +350,6 @@
     </div>
   </section>
 
-  <!-- SERVICIOS -->
   <section id="servicios" class="section">
     <div class="titulo">
       <h3>SERVICIOS</h3>
@@ -379,7 +377,6 @@
     </div>
   </section>
 
-  <!-- PORTAFOLIO -->
   <section id="portafolio" class="section">
     <div class="titulo">
       <h3>PORTAFOLIO DE SOLUCIONES</h3>
@@ -419,7 +416,6 @@
     </div>
   </section>
 
-  <!-- JOIN / TRABAJA CON NOSOTROS -->
   <section id="trabaja" class="section">
     <div class="join fade-in delay-2">
       <div class="inner">
@@ -448,7 +444,6 @@
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contacto" class="contact">
     <div class="left fade-in delay-1">
       <h3>¿Listo para potenciar tu equipo?</h3>
@@ -502,4 +497,4 @@
     });
   </script>
 </body>
-        </html>consultora-integral
+        </html>
